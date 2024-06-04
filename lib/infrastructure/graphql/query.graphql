@@ -1,12 +1,32 @@
 query GetPokemons($count: Int!) {
     pokemons(first: $count) {
+        ...PokemonOverviews
+    }
+}
+
+query GetPokemon($id: String!) {
+    pokemon(id: $id) {
         ...PokemonDetails
     }
+}
+
+fragment PokemonOverviews on Pokemon {
+    id
+    number
+    name
+    image
 }
 
 fragment PokemonDetails on Pokemon {
     id
     number
     name
+    evolutions {
+        id
+        number
+        name
+        image
+    }
+    maxHP
     image
 }

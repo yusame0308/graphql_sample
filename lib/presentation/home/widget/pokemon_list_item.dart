@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_sample/entity/pokemon.dart';
+import 'package:graphql_sample/entity/pokemon_overview.dart';
 import 'package:graphql_sample/route/router.dart';
 
 class PokemonListItem extends StatelessWidget {
@@ -8,7 +8,7 @@ class PokemonListItem extends StatelessWidget {
     required this.pokemon,
   });
 
-  final Pokemon pokemon;
+  final PokemonOverview pokemon;
 
   @override
   Widget build(BuildContext context) {

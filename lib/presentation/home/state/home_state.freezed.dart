@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeState {
-  AsyncValue<List<Pokemon>> get pokemons => throw _privateConstructorUsedError;
+  AsyncValue<List<PokemonOverview>> get pokemons =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith =>
@@ -28,7 +29,7 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
-  $Res call({AsyncValue<List<Pokemon>> pokemons});
+  $Res call({AsyncValue<List<PokemonOverview>> pokemons});
 }
 
 /// @nodoc
@@ -50,7 +51,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
       pokemons: null == pokemons
           ? _value.pokemons
           : pokemons // ignore: cast_nullable_to_non_nullable
-              as AsyncValue<List<Pokemon>>,
+              as AsyncValue<List<PokemonOverview>>,
     ) as $Val);
   }
 }
@@ -63,7 +64,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
       __$$HomeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AsyncValue<List<Pokemon>> pokemons});
+  $Res call({AsyncValue<List<PokemonOverview>> pokemons});
 }
 
 /// @nodoc
@@ -83,7 +84,7 @@ class __$$HomeStateImplCopyWithImpl<$Res>
       pokemons: null == pokemons
           ? _value.pokemons
           : pokemons // ignore: cast_nullable_to_non_nullable
-              as AsyncValue<List<Pokemon>>,
+              as AsyncValue<List<PokemonOverview>>,
     ));
   }
 }
@@ -94,7 +95,7 @@ class _$HomeStateImpl extends _HomeState {
   const _$HomeStateImpl({required this.pokemons}) : super._();
 
   @override
-  final AsyncValue<List<Pokemon>> pokemons;
+  final AsyncValue<List<PokemonOverview>> pokemons;
 
   @override
   String toString() {
@@ -122,11 +123,12 @@ class _$HomeStateImpl extends _HomeState {
 
 abstract class _HomeState extends HomeState {
   const factory _HomeState(
-      {required final AsyncValue<List<Pokemon>> pokemons}) = _$HomeStateImpl;
+          {required final AsyncValue<List<PokemonOverview>> pokemons}) =
+      _$HomeStateImpl;
   const _HomeState._() : super._();
 
   @override
-  AsyncValue<List<Pokemon>> get pokemons;
+  AsyncValue<List<PokemonOverview>> get pokemons;
   @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>

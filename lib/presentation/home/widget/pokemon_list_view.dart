@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_sample/entity/pokemon.dart';
+import 'package:graphql_sample/entity/pokemon_overview.dart';
 import 'package:graphql_sample/presentation/home/state/home_state_notifier.dart';
 import 'package:graphql_sample/presentation/home/widget/pokemon_list_item.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -10,7 +10,7 @@ class PokemonListView extends ConsumerWidget {
     required this.pokemons,
   });
 
-  final List<Pokemon> pokemons;
+  final List<PokemonOverview> pokemons;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
