@@ -13,8 +13,8 @@ _$PokemonDetailImpl _$$PokemonDetailImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       image: json['image'] as String,
       maxHP: (json['maxHP'] as num).toInt(),
-      evolutions: (json['evolutions'] as List<dynamic>)
-          .map((e) => PokemonOverview.fromJson(e as Map<String, dynamic>))
+      evolutions: (json['evolutions'] as List<dynamic>?)
+          ?.map((e) => PokemonOverview.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

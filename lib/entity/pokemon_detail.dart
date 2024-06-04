@@ -14,7 +14,7 @@ class PokemonDetail with _$PokemonDetail {
     required String name,
     required String image,
     required int maxHP,
-    required List<PokemonOverview> evolutions,
+    required List<PokemonOverview>? evolutions,
   }) = _PokemonDetail;
 
   factory PokemonDetail.fromJson(Map<String, dynamic> json) =>

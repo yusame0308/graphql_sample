@@ -25,7 +25,7 @@ mixin _$PokemonDetail {
   String get name => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   int get maxHP => throw _privateConstructorUsedError;
-  List<PokemonOverview> get evolutions => throw _privateConstructorUsedError;
+  List<PokemonOverview>? get evolutions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +45,7 @@ abstract class $PokemonDetailCopyWith<$Res> {
       String name,
       String image,
       int maxHP,
-      List<PokemonOverview> evolutions});
+      List<PokemonOverview>? evolutions});
 }
 
 /// @nodoc
@@ -66,7 +66,7 @@ class _$PokemonDetailCopyWithImpl<$Res, $Val extends PokemonDetail>
     Object? name = null,
     Object? image = null,
     Object? maxHP = null,
-    Object? evolutions = null,
+    Object? evolutions = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -89,10 +89,10 @@ class _$PokemonDetailCopyWithImpl<$Res, $Val extends PokemonDetail>
           ? _value.maxHP
           : maxHP // ignore: cast_nullable_to_non_nullable
               as int,
-      evolutions: null == evolutions
+      evolutions: freezed == evolutions
           ? _value.evolutions
           : evolutions // ignore: cast_nullable_to_non_nullable
-              as List<PokemonOverview>,
+              as List<PokemonOverview>?,
     ) as $Val);
   }
 }
@@ -111,7 +111,7 @@ abstract class _$$PokemonDetailImplCopyWith<$Res>
       String name,
       String image,
       int maxHP,
-      List<PokemonOverview> evolutions});
+      List<PokemonOverview>? evolutions});
 }
 
 /// @nodoc
@@ -130,7 +130,7 @@ class __$$PokemonDetailImplCopyWithImpl<$Res>
     Object? name = null,
     Object? image = null,
     Object? maxHP = null,
-    Object? evolutions = null,
+    Object? evolutions = freezed,
   }) {
     return _then(_$PokemonDetailImpl(
       id: null == id
@@ -153,10 +153,10 @@ class __$$PokemonDetailImplCopyWithImpl<$Res>
           ? _value.maxHP
           : maxHP // ignore: cast_nullable_to_non_nullable
               as int,
-      evolutions: null == evolutions
+      evolutions: freezed == evolutions
           ? _value._evolutions
           : evolutions // ignore: cast_nullable_to_non_nullable
-              as List<PokemonOverview>,
+              as List<PokemonOverview>?,
     ));
   }
 }
@@ -170,7 +170,7 @@ class _$PokemonDetailImpl extends _PokemonDetail {
       required this.name,
       required this.image,
       required this.maxHP,
-      required final List<PokemonOverview> evolutions})
+      required final List<PokemonOverview>? evolutions})
       : _evolutions = evolutions,
         super._();
 
@@ -187,12 +187,14 @@ class _$PokemonDetailImpl extends _PokemonDetail {
   final String image;
   @override
   final int maxHP;
-  final List<PokemonOverview> _evolutions;
+  final List<PokemonOverview>? _evolutions;
   @override
-  List<PokemonOverview> get evolutions {
+  List<PokemonOverview>? get evolutions {
+    final value = _evolutions;
+    if (value == null) return null;
     if (_evolutions is EqualUnmodifiableListView) return _evolutions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_evolutions);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -240,7 +242,7 @@ abstract class _PokemonDetail extends PokemonDetail {
       required final String name,
       required final String image,
       required final int maxHP,
-      required final List<PokemonOverview> evolutions}) = _$PokemonDetailImpl;
+      required final List<PokemonOverview>? evolutions}) = _$PokemonDetailImpl;
   const _PokemonDetail._() : super._();
 
   factory _PokemonDetail.fromJson(Map<String, dynamic> json) =
@@ -257,7 +259,7 @@ abstract class _PokemonDetail extends PokemonDetail {
   @override
   int get maxHP;
   @override
-  List<PokemonOverview> get evolutions;
+  List<PokemonOverview>? get evolutions;
   @override
   @JsonKey(ignore: true)
   _$$PokemonDetailImplCopyWith<_$PokemonDetailImpl> get copyWith =>

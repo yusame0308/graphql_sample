@@ -10,8 +10,8 @@ class HomePage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     useEffect(() {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        ref.read(homeStateNotifierProvider.notifier).getPokemons();
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        await ref.read(homeStateNotifierProvider.notifier).getPokemons();
       });
       return null;
     }, const []);
