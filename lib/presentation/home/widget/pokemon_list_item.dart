@@ -14,7 +14,7 @@ class PokemonListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        PokemonDetailRoute(id: pokemon.id).go(context);
+        PokemonDetailRoute(id: pokemon.id).push(context);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12),
