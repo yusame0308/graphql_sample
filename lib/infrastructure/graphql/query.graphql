@@ -1,40 +1,12 @@
 query GetPokemons($count: Int!) {
     pokemons(first: $count) {
-        ...PokemonDetails,
-    }
-}
-
-query GetFivePokemons {
-    pokemons(first: 5) {
         ...PokemonDetails
     }
 }
 
 fragment PokemonDetails on Pokemon {
     id
-    number,
-    name,
-    weight {
-        minimum
-        maximum
-    }
-    height {
-        minimum
-        maximum
-    }
-    classification
-    types
-    resistant
-    attacks {
-        fast {
-            name
-            type
-            damage
-        }
-        special {
-            name
-            type
-            damage
-        }
-    }
+    number
+    name
+    image
 }
