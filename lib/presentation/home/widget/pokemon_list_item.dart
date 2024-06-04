@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_sample/entity/pokemon.dart';
+import 'package:graphql_sample/route/router.dart';
 
 class PokemonListItem extends StatelessWidget {
   const PokemonListItem({
@@ -12,7 +13,9 @@ class PokemonListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        PokemonDetailRoute(id: pokemon.id).go(context);
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12),
         child: Row(
